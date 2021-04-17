@@ -1,0 +1,26 @@
+.page-wrapper {
+  max-width: 740px;
+  margin: 0 auto;
+  margin-top: 64px;
+}
+
+input[type="search"],
+input[type="text"],
+textarea {
+  color: var(--text-normal);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  resize: none;
+  width: 100%;
+}
+
+input[type="search"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+}
+
+input[type="search"]::placeholder,
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
