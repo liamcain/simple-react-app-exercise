@@ -1,7 +1,27 @@
 .page-wrapper {
-  max-width: 740px;
+  display: flex;
+  flex-direction: column;
   margin: 0 auto;
-  margin-top: 64px;
+  max-width: 740px;
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.footer {
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.task-list-empty-state {
+  color: var(--text-muted);
+  padding: 12px 0;
 }
 
 input[type="search"],

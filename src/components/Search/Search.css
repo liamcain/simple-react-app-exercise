@@ -1,6 +1,11 @@
 .search-input {
   background-color: var(--background-primary);
   border: none;
-  font-size: 24px;
+  font-size: 18px;
   padding: 8px 12px;
+}
+
+.search-container {
+  border-bottom: 2px solid var(--border-muted);
+  padding: 16px 0;
 }

@@ -3,10 +3,14 @@
   background-color: var(--background-secondary);
   border-radius: 12px;
   color: var(--text-normal);
-  padding: 24px;
+  padding: 12px;
   padding-left: 48px;
   position: relative;
-  margin-top: 12px;
+  margin-top: 8px;
+}
+
+.inline-task.no-task {
+  padding-left: 24px;
 }
 
 .inline-task-title,
@@ -19,7 +23,11 @@
 .inline-task-checkbox {
   height: 20px;
   position: absolute;
-  left: 0;
+  left: 18px;
+}
+
+.inline-task:hover {
+  background-color: var(--background-hovered);
 }
 
 .inline-task:focus-within {
@@ -32,12 +40,19 @@
   transition: opacity 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
   display: none;
   opacity: 0;
+  pointer-events: none;
 }
 
+.inline-task.no-task:focus-within .inline-task-checkbox,
+.inline-task:focus-within .btn-inline-delete,
 .inline-task:focus-within .inline-task-description,
 .inline-task:focus-within .btn-cta {
   display: block;
   opacity: 1;
+}
+
+.inline-task-description {
+  margin-top: 8px;
 }
 
 .inline-task-title {
@@ -49,5 +64,28 @@
 }
 
 .btn-cta {
+  background: var(--background-cta);
+  margin: 12px 0;
   opacity: 0;
+}
+
+.btn-inline-delete {
+  transition: all 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
+  cursor: pointer;
+  color: var(--background-muted);
+  opacity: 0;
+  position: absolute;
+  right: 0px;
+  top: 16px;
+  height: 32px;
+  width: 32px;
+}
+
+.btn-inline-delete:hover {
+  color: var(--mod-error);
+}
+
+.btn-inline-delete svg {
+  height: 16px;
+  width: 16px;
 }

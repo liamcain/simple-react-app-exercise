@@ -1,10 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --text-normal: #eceff4;
   --text-muted: rgb(236, 239, 244);
   --background-secondary: rgb(41, 46, 57);
+  --background-hovered: var(--background-primary);
   --background-primary: #2e3440;
   --background-focused: #3b4252;
-  --shadow-focused: rgba(0, 0, 0, 0.35);
+  --background-cta: #5e81ac;
+  --background-success: #a3be8c;
+  --border-muted: var(--background-primary);
+  --shadow-focused: rgba(0, 0, 0, 0.2);
+  --mod-error: #bf616a;
 }
 
 body {
@@ -20,4 +29,15 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+button {
+  appearance: none;
+  background: var(--background-primary);
+  border: none;
+  border-radius: 8px;
+  color: var(--text-normal);
+  font-weight: 500;
+  font-size: 1em;
+  padding: 8px 24px;
 }

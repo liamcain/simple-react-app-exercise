@@ -22,3 +22,26 @@ yarn create react-app take-home-todo --template typescript
 ## Styling
 
 While I like Styled-Components and I would love to try out TailwindCSS, I think I'm going to stick with basic CSS for now to avoid extra setup.
+
+## Data Persistence
+
+I opted to persist the data in localStorage as a single stringified-JSON blob. This comes with some limitations:
+
+- Max storage size ~10MB (20MB for Chrome, but varies by browser)
+- `onChange` I am re-serializing the entire dataset which is very inefficient. This is easily fixed by serializing each task individually.
+
+## Additional Libraries Used
+
+I only added `clsx` as a basic tool for conditionally applying classes to HTML elements.
+
+## Known UX Issues
+
+### Textarea size
+
+Textarea for description doesn't autoresize. This requires either using `contentEditable` (which is a pain with React) or calculating the height dynamically (on input and also on window resize. There is probably a library I could use).
+
+### Using `focus-within`
+
+`focus-within` is definitely easier than managing the state within the `App.js` and storing an "expanded" task. I don't need nearly as much event handling and I get acessibility features out of the box.
+
+The downside is that you often fight against it when you want to keep the card expanded when it would otherwise lose focus. Example: clicking the delete button.

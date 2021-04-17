@@ -4,7 +4,7 @@ import { ITask } from "../types";
 import { deserializeTasks, serializeTasks } from "../utils";
 
 interface ITaskAction {
-  type: "create" | "update" | "toggle";
+  type: "create" | "update" | "delete";
   payload: any;
 }
 
@@ -30,6 +30,12 @@ function tasksReducer(
       serializeTasks(newState);
       return newState;
     }
+    case "delete": {
+      const newState = { ...state };
+      delete newState[action.payload.ctime];
+      serializeTasks(newState);
+      return newState;
+    }
     default:
       return state;
   }
@@ -45,6 +51,8 @@ export default function useTasks() {
     taskMap: state,
     createTask: (task: Partial<ITask>) =>
       dispatch({ type: "create", payload: task }),
+    deleteTask: (task: Partial<ITask>) =>
+      dispatch({ type: "delete", payload: task }),
     updateTask: (task: Partial<ITask>) =>
       dispatch({ type: "update", payload: task }),
   };

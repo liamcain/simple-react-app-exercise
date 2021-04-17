@@ -1,6 +1,8 @@
 import React from "react";
 
-import { ITask } from "../../types";
+import { ITask } from "types";
+
+import "./Stats.css";
 
 interface IProps {
   tasks: ITask[];
@@ -13,7 +15,8 @@ export default function Stats(props: IProps) {
 
   return (
     <div className="stat-container">
-      {numPendingTasks} / {numTotalTasks}
+      <span className="stat-primary">{numPendingTasks}</span>{" "}
+      <span className="stat-secondary">&nbsp;/&nbsp;{numTotalTasks}</span>
     </div>
   );
 }

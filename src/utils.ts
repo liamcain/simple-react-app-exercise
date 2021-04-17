@@ -17,6 +17,7 @@ export function serializeTasks(taskMap: Record<number, ITask>): void {
 export function applyFilter(tasks: ITask[], searchQuery: string): ITask[] {
   return tasks.filter(
     (task) =>
-      task.description.includes(searchQuery) || task.title.includes(searchQuery)
+      task.description.toLowerCase().includes(searchQuery) ||
+      task.title.toLowerCase().includes(searchQuery)
   );
 }
